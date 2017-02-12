@@ -14,6 +14,7 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+
   def log_out
     session.delete(:user_id)
     @current_user = nil
@@ -33,7 +34,7 @@ module SessionsHelper
     end
   end
 
-equire 'test_helper'
+require 'test_helper'
 
 class SessionsHelperTest < ActionView::TestCase
 
@@ -51,7 +52,6 @@ class SessionsHelperTest < ActionView::TestCase
     @user.update_attribute(:remember_digest, User.digest(User.new_token))
     assert_nil current_user
   end
-end
 
 end
 
