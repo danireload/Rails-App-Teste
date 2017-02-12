@@ -24,5 +24,6 @@ test "valid signup information" do
     assert_template 'users/show'
     assert is_logged_in?
   end
+end
 
 end
